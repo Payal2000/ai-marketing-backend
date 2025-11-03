@@ -365,7 +365,5 @@ This project is private and proprietary.
 - [Comprehensive Documentation](./COMPREHENSIVE_SYSTEM_DOCUMENTATION.md)
 - [Setup Guide](./SETUP.md)
 
----
 
-**Built with ❤️ for comprehensive e-commerce analytics**
 
