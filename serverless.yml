@@ -1,0 +1,42 @@
+service: email-to-insight-mvp
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-esbuild
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-east-1
+  architecture: arm64
+  logRetentionInDays: 14
+  environment:
+    GMAIL_CLIENT_ID: ${env:GMAIL_CLIENT_ID}
+    GMAIL_CLIENT_SECRET: ${env:GMAIL_CLIENT_SECRET}
+    GMAIL_REFRESH_TOKEN: ${env:GMAIL_REFRESH_TOKEN}
+    OPENAI_API_KEY: ${env:OPENAI_API_KEY}
+    SUPABASE_DB_URL: ${env:SUPABASE_DB_URL}
+    BATCH_SIZE: ${env:BATCH_SIZE, 5}
+    GMAIL_LABEL_INBOX: ${env:GMAIL_LABEL_INBOX, 'ai-mvp'}
+    GMAIL_LABEL_REPLIED: ${env:GMAIL_LABEL_REPLIED, 'AI_PROCESSED'}
+
+functions:
+  poller:
+    handler: functions/poller/index.handler
+    timeout: 60
+    memorySize: 256
+    events:
+      - schedule: rate(2 minutes)
+
+custom:
+  esbuild:
+    bundle: true
+    minify: true
+    sourcemap: true
+    target: node20
+    platform: node
+    external:
+      - pg-native
+
+

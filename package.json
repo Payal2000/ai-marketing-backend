@@ -1,0 +1,52 @@
+{
+  "name": "email-to-insight-mvp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "serverless package",
+    "deploy": "serverless deploy",
+    "remove": "serverless remove",
+    "bundle": "serverless package",
+    "start:local": "tsx scripts/local-run.ts",
+    "test:db": "tsx scripts/test-db-connection.ts",
+    "schema:run": "tsx scripts/run-schema.ts",
+    "data:mock": "tsx scripts/generate-mock-data.ts",
+    "data:verify": "tsx scripts/verify-data.ts",
+    "data:check": "tsx scripts/check-empty-tables.ts",
+    "data:fill": "tsx scripts/fill-empty-tables.ts",
+    "metrics:acquisition": "tsx scripts/query-acquisition-metrics.ts",
+    "schema:acquisition": "tsx scripts/run-acquisition-schema.ts",
+    "metrics:populate": "tsx scripts/populate-acquisition-metrics.ts",
+    "metrics:all": "tsx scripts/query-all-acquisition-metrics.ts",
+    "schema:consideration": "tsx scripts/run-consideration-schema.ts",
+    "metrics:consideration:populate": "tsx scripts/populate-consideration-metrics.ts",
+    "metrics:consideration": "tsx scripts/query-consideration-metrics.ts",
+    "schema:retention": "tsx scripts/run-retention-schema.ts",
+    "metrics:retention:populate": "tsx scripts/populate-retention-metrics.ts",
+    "metrics:retention": "tsx scripts/query-retention-metrics.ts",
+    "schema:advocacy": "tsx scripts/run-advocacy-schema.ts",
+    "data:advocacy": "tsx scripts/generate-advocacy-mock-data.ts",
+    "metrics:advocacy:populate": "tsx scripts/populate-advocacy-metrics.ts",
+    "metrics:advocacy": "tsx scripts/query-advocacy-metrics.ts",
+    "test:retention-refresh": "tsx scripts/test-retention-refresh.ts"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "googleapis": "^131.0.0",
+    "openai": "^4.55.0",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "serverless": "^3.39.0",
+    "serverless-esbuild": "^1.52.1",
+    "esbuild": "^0.21.5",
+    "tsx": "^4.7.1",
+    "typescript": "^5.6.3"
+  }
+}
+
