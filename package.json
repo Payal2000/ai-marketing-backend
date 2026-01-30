@@ -9,6 +9,7 @@
   "scripts": {
     "build": "serverless package",
     "deploy": "serverless deploy",
+    "deploy:supabase": "tsx scripts/deploy-to-supabase.ts",
     "remove": "serverless remove",
     "bundle": "serverless package",
     "start:local": "tsx scripts/local-run.ts",

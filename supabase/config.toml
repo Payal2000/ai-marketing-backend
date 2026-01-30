@@ -1,0 +1,21 @@
+# Supabase Configuration File
+# This file is used by the Supabase CLI for local development and deployments
+# The new user should update these values with their own Supabase project details
+
+[db]
+# Connection string format: postgresql://postgres:[YOUR-PASSWORD]@db.[PROJECT-REF].supabase.co:5432/postgres
+# Get this from: Supabase Dashboard > Project Settings > Database > Connection string (URI)
+connection_string = "postgresql://postgres:password@db.your-project.supabase.co:5432/postgres"
+
+[api]
+# Get these from: Supabase Dashboard > Project Settings > API
+# Format: https://[PROJECT-REF].supabase.co
+api_url = "https://your-project.supabase.co"
+anon_key = "your-anon-key"
+service_role_key = "your-service-role-key"
+
+[auth]
+enabled = false
+
+[storage]
+enabled = false
