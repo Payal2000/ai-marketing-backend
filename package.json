@@ -19,6 +19,8 @@
     "data:verify": "tsx scripts/verify-data.ts",
     "data:check": "tsx scripts/check-empty-tables.ts",
     "data:fill": "tsx scripts/fill-empty-tables.ts",
+    "data:export": "tsx scripts/export-data.ts",
+    "data:import": "tsx scripts/import-data.ts",
     "metrics:acquisition": "tsx scripts/query-acquisition-metrics.ts",
     "schema:acquisition": "tsx scripts/run-acquisition-schema.ts",
     "metrics:populate": "tsx scripts/populate-acquisition-metrics.ts",
